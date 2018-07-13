@@ -1,0 +1,37 @@
+CREATE TABLE `up_item_big` (
+`id` int(11) NOT NULL,
+`title` text,
+`descr` text,
+`store` int(11) DEFAULT NULL,
+`pic` text,
+`price` int(11) DEFAULT NULL,
+`prctp` tinyint(1) DEFAULT NULL,
+`status` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+— Dumping data for table `up_item_big`
+--
+
+INSERT INTO `up_item_big` VALUES(1, 'Arduino Uno', 'a microcontroller board based on 8-bit ATmega328P microcontroller. Along with ATmega328P, it consists other components such as crystal oscillator, serial communication, voltage regulator, etc. to support the microcontroller. Arduino Uno has 14 digital input/output pins (out of which 6 can be used as PWM outputs), 6 analog input pins, a USB connection, A Power barrel jack, an ICSP header and a reset button.', 1122, '1.jpg', 4, 1, 1);
+INSERT INTO `up_item_big` VALUES(2, 'Arduino Nano', 'The Arduino board is designed in such a way that it is very easy for beginners to get started with microcontrollers. This board especially is breadboard friendly is very easy to handle the connections. Let’s start with powering the Board.', 1233, '2.jpg', 4, 1, 1);
+INSERT INTO `up_item_big` VALUES(3, 'NRF24L01', 'Module works with the help of SPI communications. These modules can either be used with a 3.3V microcontroller or a 5V microcontroller but it should have an SPI port. The complete details on how to use the module through SPI is given the data sheet below. The circuit diagram shows how the module should be interfaced with a microcontroller.', 578, '3.jpg', 1, 1, 1);
+
+--
+— Indexes for dumped tables
+--
+
+--
+— Indexes for table `up_item_big`
+--
+ALTER TABLE `up_item_big`
+ADD UNIQUE KEY `id` (`id`);
+//Это запрос для магазина таблица up_item_big
+
+CREATE TABLE up_cart (
+id int(11) NOT NULL AUTO_INCREMENT,
+userid int(11) default NULL,
+itemid int(11) default NULL,
+pcatid int(11) default NULL,
+status tinyint(1) default NULL,
+UNIQUE KEY id (id) );
